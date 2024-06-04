@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./js/script.js" defer type="module"></script>
+  <title>BMI Calculator</title>
+</head>
+<body>
+  <main id="bmi-calculator_interface">
+
+    <div class="error-alert">
+      Please, enter numbers only
+    </div>
+
+    <div class="bmi-calculator_card">
+      <form class="bmi-calculator_form">
+        <h1 class="card-title">Calculate BMI</h1>
+
+        <div class="form-input">
+          <label for="weight">Weight (kg)</label>
+          <input id="weight" type="text" placeholder="60" />
+        </div>
+
+        <div class="form-input">
+          <label for="height">Height (cm)</label>
+          <input id="height" type="text" placeholder="165" />
+        </div>
+
+        <button type="submit">Calculate <img src="./assets/arrow-img.svg" alt="arrow pointing to the right"></button>
+      </form>
+    </div>
+
+    <div class="bmi-calculator_modal-screen">
+      <div class="bmi-calculator_card modal">
+        <h2 class="card-title modal-message">Your BMI is 28</h2>
+        <button class="modal-button"><img src="./assets/close-button.svg" alt="closing button"></button>
+      </div>
+      
+    </div>
+  </main>
+  
+</body>
+</html>

@@ -1,0 +1,172 @@
+/* General styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --color_body-background: #040924;
+  --color_card-background_light-text: #ffffff;
+
+  --color_heading: #0c3440;
+  --color_button_input-outline: #02799D;
+  --color_button-hover: #01475c;
+  --color_label: #00453A;
+  --color_input-text: #212529;
+  --color_input-placeholder: #afb1b3;
+  --color_input-background: #DCE2E9;
+  --color_input-border: rgba(73, 80, 87, 0.3);
+
+  --color_error-background: #f03e3e;
+}
+
+body {
+  background-color: var(--color_body-background);
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+body, input, button {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+/* Cards styling */
+#bmi-calculator_interface {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.bmi-calculator_card {
+  background: var(--color_card-background_light-text);
+  padding: 4.8rem 6.4rem;
+  max-width: 48rem;
+  box-shadow: 0 .2rem .4rem rgba(0, 0, 0, 0.1);
+  border-radius: .6rem;
+}
+
+/* Form styling */
+form {
+  width: 30rem;
+}
+
+.card-title {
+  color: var(--color_heading);
+  font-size: 3.2rem;
+  line-height: 4rem;
+}
+
+form h1 {
+  margin-bottom: 3.2rem;
+}
+
+form label {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: var(--color_label);
+  margin-bottom: .8rem;
+  display: block;
+}
+
+form input {
+  width: 100%;
+  padding: 1.6rem;
+  border: 1px solid var(--color_input-border);
+  border-radius: .4rem;
+  margin-bottom: 1.6rem;
+  background-color: var(--color_input-background);
+}
+
+form input::placeholder {
+  color: var(--color_input-placeholder);
+}
+
+form input:focus {
+  outline: 2px solid var(--color_button_input-outline);
+}
+
+form button {
+  margin-top: 1.6rem;
+  padding: 1.6rem;
+  width: 100%;
+  border: none;
+  border-radius: .4rem;
+
+  color: var(--color_card-background_light-text);
+  background-color: var(--color_button_input-outline);
+  font-weight: bold;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .4rem;
+  cursor: pointer;
+
+  transition: background .3s;
+}
+
+form button:hover {
+  background: var(--color_button-hover);
+}
+
+
+/* Modal styling */
+.bmi-calculator_modal-screen.open {
+  opacity: 1;
+  visibility: visible;
+}
+.bmi-calculator_modal-screen {
+  position:absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: grid;
+  place-content: center;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal {
+  position: relative;
+}
+
+.modal button {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.modal button:hover {
+  transform: scale(1.2);
+}
+
+
+/* Error alert */
+.error-alert.open {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.error-alert {
+  background-color: var(--color_error-background);
+  text-align: center;
+  color: var(--color_card-background_light-text);
+  font-weight: bold;
+  padding: .8rem 0;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: transform .5s;
+}
